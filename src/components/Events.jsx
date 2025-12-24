@@ -63,7 +63,9 @@ export default function Events() {
         {[...Array(15)].map((_, i) => (
           <motion.div
             key={i}
-            className={`absolute w-1 h-1 lg:w-2 lg:h-2 rounded-full ${i % 2 === 0 ? 'bg-[#FFD700]' : 'bg-[#E91E63]'}`}
+            className={`absolute w-1 h-1 lg:w-2 lg:h-2 rounded-full ${
+              i % 2 === 0 ? 'bg-[#FFD700]' : 'bg-[#E91E63]'
+            }`}
             style={{
               left: `${8 + i * 6}%`,
               top: `${12 + ((i * 9) % 75)}%`,
@@ -114,8 +116,8 @@ export default function Events() {
                   : 'border-white/25 bg-white/15 hover:border-[#FFD700]/60 shadow-xl'
               }`}
             >
-              {/* Circle inside card */}
-              <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-24 h-24 rounded-full overflow-hidden border-4 border-[#FFD700] bg-white flex items-center justify-center z-30 shadow-lg">
+              {/* Circle image */}
+              <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-24 h-24 rounded-full overflow-hidden border-4 border-[#FFD700] bg-white z-30 shadow-lg">
                 <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
               </div>
 
@@ -129,13 +131,19 @@ export default function Events() {
                 {item.name}
               </h4>
 
-              {/* Date & Time */}
-              <p className="text-base lg:text-lg italic mb-4 text-[#FFD700] text-center" style={{ textShadow: '0 0 20px rgba(255, 215, 0, 0.7)' }}>
-                {item.date} | {item.time}
-              </p>
+              {/* Date & Venue – CENTERED */}
+              <div className="flex flex-col items-center justify-center gap-3 mt-6">
+                <p
+                  className="text-base lg:text-lg italic text-[#FFD700] text-center"
+                  style={{ textShadow: '0 0 20px rgba(255, 215, 0, 0.7)' }}
+                >
+                  {item.date} | {item.time}
+                </p>
 
-              {/* Venue */}
-              <p className="text-sm lg:text-base italic text-[#FFD700] font-medium text-center">{item.venue}</p>
+                <p className="text-sm lg:text-base italic text-[#FFD700] font-medium text-center">
+                  {item.venue}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

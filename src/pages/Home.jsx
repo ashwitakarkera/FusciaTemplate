@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import CoupleProfile from '../components/CoupleProfile';
 import Events from '../components/Events';
 import Venue from '../components/Venue';
+import Gallery from '../components/Gallery';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
@@ -16,6 +17,7 @@ export default function Home() {
       <CoupleProfile />
       <Events />
       <Venue />
+      <Gallery />
       <Footer />
     </div>
   );
